@@ -143,6 +143,7 @@ allprojects {
 }
 
 dependencies {
+    compileOnly files('libs/framework.jar')
     implementation "androidx.dynamicanimation:dynamicanimation:${ANDROID_X_VERSION}"
     implementation "androidx.recyclerview:recyclerview:${ANDROID_X_VERSION}"
     implementation "androidx.preference:preference:${ANDROID_X_VERSION}"
@@ -168,10 +169,10 @@ dependencies {
 }
 
 protobuf {
-    // Configure the protoc executable
-    protoc {
-        artifact = "com.google.protobuf:protoc:${protocVersion}${PROTO_ARCH_SUFFIX}"
-    }
+//    // Configure the protoc executable
+//    protoc {
+//        artifact = "com.google.protobuf:protoc:${protocVersion}${PROTO_ARCH_SUFFIX}"
+//    }
     generateProtoTasks {
         all().each { task ->
             task.builtins {
